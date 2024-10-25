@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    $title="Home Page";
+    return view('pages.home', compact("title"));
+});
+
+Route::get('/about', function () {
+    $list = [
+        "first",
+        "second",
+        "third",
+    ];
+    return view('pages.about', compact("list"));
 });
